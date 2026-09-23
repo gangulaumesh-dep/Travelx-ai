@@ -1,0 +1,3 @@
+const API=import.meta.env.VITE_API_URL||"http://localhost:5000/api";
+export async function api(path,opt={}){const h=opt.body instanceof FormData?{}:{"Content-Type":"application/json"};const t=localStorage.getItem("travelx_token");if(t)h.Authorization=`Bearer ${t}`;const r=await fetch(API+path,{...opt,headers:{...h,...(opt.headers||{})}});const d=await r.json().catch(()=>({}));if(!r.ok)throw Error(d.message||"Request failed");return d}
+export const auth={login:b=>api("/auth/login",{method:"POST",body:JSON.stringify(b)}),register:b=>api("/auth/register",{method:"POST",body:JSON.stringify(b)})};

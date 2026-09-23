@@ -1,0 +1,21 @@
+TRAVELX FINAL — PostgreSQL 18
+
+1. Open pgAdmin and create database: travelx
+2. Open Query Tool for travelx and run database/schema.sql
+3. Backend:
+   cd backend
+   npm install
+   copy .env.example .env
+   edit .env -> put your PostgreSQL password
+   npm run dev
+4. New terminal:
+   cd frontend
+   npm install
+   copy .env.example .env
+   npm run dev
+5. Open the Vite localhost URL.
+
+Authority login:
+admin@travelx.local / Admin@123
+
+Do NOT install MySQL. This version uses PostgreSQL 18.
